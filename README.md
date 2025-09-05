@@ -18,7 +18,9 @@ In the same vein, having differring package verisons also introduces bugs for la
 
 3. Enter ```uv sync``` in the terminal. This will automatically download the specific python version and packages.
 
-4. Set the python interpreter used by VS Code to be the same as the one used by the virtual environment that should have been created. The path should be something like ```tio4550-housing-energy``` and have ```.venv``` in the name. This ensures that you use the python setup used only by this project.
+4. Enter ```uv run main.py``` in the terminal. This will create a .venv folder that only exists for you on your PC. It contains the virtual environment for this specific python project on your PC.
+
+5. Set the python interpreter used by VS Code to be the same as the one used by the virtual environment that should have been created. The path should be something like ```tio4550-housing-energy``` and have ```.venv``` in the name. This ensures that you use the python setup used only by this project.
 
 ### Commands you should know
 
