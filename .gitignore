@@ -205,3 +205,13 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Ignore all content in the data subdirectories
+data/1_raw/*
+data/2_interim/*
+data/3_processed/*
+
+# But DO NOT ignore the .gitkeep files inside them
+!data/1_raw/.gitkeep
+!data/2_interim/.gitkeep
+!data/3_processed/.gitkeep
