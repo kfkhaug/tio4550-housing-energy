@@ -5,17 +5,18 @@ This document outlines the structure of our project. It's designed to be a stand
 ## High-Level Overview
 
 The main idea is to keep different parts of the project separate:
-*   **`data/`**: All data files.
-*   **`notebooks/`**: Experimental code and analysis.
-*   **`src/`**: Reusable, production-quality Python code.
-*   **`report/`**: The final report and any figures.
-*   **`docs/`**: Project documentation.
+
+* **`data/`**: All data files.
+* **`notebooks/`**: Experimental code and analysis.
+* **`src/`**: Reusable, production-quality Python code.
+* **`report/`**: The final report and any figures.
+* **`docs/`**: Project documentation.
 
 ## Directory Tree
 
 Here is a simplified view of our project's folder structure:
 
-```
+```txt
 tio4550-housing-energy/
 ├── .gitignore             # Specifies files and folders for Git to ignore.
 ├── data/
@@ -50,19 +51,19 @@ The `src` folder is the heart of our project's reusable code. It's not just a co
 
 ### Why a Package?
 
-1.  **Clean Notebooks**: Instead of having huge cells of complex functions in our notebooks, we can define them once in the `src` package and import them. This keeps the notebooks focused on the narrative of our analysis.
-2.  **Reusability**: Functions for cleaning data, creating features, or training models can be easily reused across different notebooks or scripts.
-3.  **Easy Imports**: After setting up the project with `uv pip install -e .` (as described in `dev_setup.md`), we can import our code from anywhere in the project, just like we would import `pandas` or `numpy`.
+1. **Clean Notebooks**: Instead of having huge cells of complex functions in our notebooks, we can define them once in the `src` package and import them. This keeps the notebooks focused on the narrative of our analysis.
+2. **Reusability**: Functions for cleaning data, creating features, or training models can be easily reused across different notebooks or scripts.
+3. **Easy Imports**: After setting up the project with `uv pip install -e .` (as described in `dev_setup.md`), we can import our code from anywhere in the project, just like we would import `pandas` or `numpy`.
 
 ### How to Use It
 
 The `tio4550_housing_energy` package is organized into sub-packages for different tasks:
 
-*   `exploratory_data_analysis`: Functions for performing EDA.
-*   `data_processing`: Functions for cleaning and preparing raw data.
-*   `feature_engineering`: Functions for creating new features.
-*   `modeling`: Classes and functions for training and evaluating models.
-*   `utils`: Common helper functions.
+* `exploratory_data_analysis`: Functions for performing EDA.
+* `data_processing`: Functions for cleaning and preparing raw data.
+* `feature_engineering`: Functions for creating new features.
+* `modeling`: Classes and functions for training and evaluating models.
+* `utils`: Common helper functions.
 
 To use a function in a notebook, you simply import it. For example, to use the test function from the `utils` module, you would write:
 

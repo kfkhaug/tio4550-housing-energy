@@ -4,8 +4,9 @@ This document includes instructions for development setup as well as a quick int
 
 ## Setup
 
-1. Begin by installing uv following [this](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer) guide. On Windows 11, you need to run this command: 
-    ```
+1. Begin by installing uv following [this](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer) guide. On Windows 11, you need to run this command:
+
+    ```bash
     powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
     ```
 
@@ -20,7 +21,8 @@ This document includes instructions for development setup as well as a quick int
 6. Run ```uv pip install -e .``` in the terminal. This installs the project's src folder as a package. Thereby, you can import code into the notebook from the src folder.
 
 7. Place the raw data files in `data/1_raw/`. Data from Boligmappa should be prefixed with `bm_` (e.g., `bm_address.csv`), and the data from Finn should be named `finn_ads.csv`. The `data/1_raw/` folder should then have the following structure:
-    ```
+
+    ```txt
     tio4550-housing-energy/
     ├── data/
     │   ├── 1_raw/
@@ -41,12 +43,12 @@ This document includes instructions for development setup as well as a quick int
 ## Tools You Should Know
 
 ### Uv
+
 [Uv](https://docs.astral.sh/uv/) is a tool for managing the python version and the packages you use. It completely relpaces pip. **Never use pip**, that will break the project.
 
 The reason it is genious is that normally, each person working on a project may have different versions of python and therefore experience different bugs or functionality. Having the same python version removes this problem.
 
 In the same vein, having differring package verisons also introduces bugs for large projects. Uv handles all of this.
-
 
 #### Useful Uv Commands
 
@@ -54,19 +56,20 @@ In the same vein, having differring package verisons also introduces bugs for la
 
 - **```uv add [package]```** installs a package. For example ```uv add scikit-learn pandas``` has already been been used to install the two packages `pandas` and `scikit-learn`. This command replaces the old ```pip install [package]``` way of doing things. From now on, never use `pip install`. Instead rely on `uv add`. If you want to add a package to the `dev` group, use ```uv add --dev [package]```.
 
-
 - **```uv remove [package]```** is used to uninstall packages. If you want to remove a package from the `dev` group, use `uv remove --dev [package]` instead.
 
 - **`uv self update`** updates uv itself. It is not neccessary in any way, but now you know how to update uv.
 
 ### Ruff
+
 [Ruff](https://docs.astral.sh/ruff/#testimonials) re-formats code to use the same style and automatically fixes common errors. This ensures both that easily overseen errors are corrected immediately and that everyone can read your the entire codebase. Ruff should be run each time you are done editing a file.
 
-I have set it to automatically run for all files whenever you use git commit. The result should be shown in the terminal. It should also be installed automatically when you run ```uv sync```, but i advise you to also install the VS Code extension for it that can be found [here](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff).
+I have set it to automatically run for all files whenever you use git commit. The result should be shown in the terminal. It should also be installed automatically when you run ```uv sync```, but i advise you to also install the VS Code extension for it that can be found in the [store](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff).
 
 If you want to run it manually, use any of these:
-```
-# Lint files in `path/to/code`. #
+
+```bash
+# Lint files in path/to/code. #
 ruff check [path/to/code/]
 # Eg. ruff check main.py
 
